@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>HTML5 Bones :: PAGE TITLE</title>
+
+    <!-- Enter a brief description of your page -->
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+
+    <!-- Include the site stylesheet -->
+    <link href="css/styles.css" rel="stylesheet" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.2"></script>
+</head>
+
+<body>
+
+    <header role="banner">
+
+        <h1>American Presbyterian Denominational Statistics</h1>
+
+        <!-- ARIA: the landmark role "navigation" is added here as the element contains site navigation
+        NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are. -->
+        <nav role="navigation">
+            <!-- This can contain your site navigation either in an unordered list or even a paragraph that contains links that allow users to navigate your site -->
+        </nav>
+
+    </header>
+
+    <!-- If you want to use an element as a wrapper, i.e. for styling only, then <div> is still the element to use -->
+    <div class="wrap">
+
+        <!-- The <main> element is used to enclose the main content, i.e. that which contains the central topic of a document -->
+        <!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
+        <main> element until user agents implement the required role mapping. -->
+        <main role="main">
+
+            <!-- The <section> element can be used to enclose content that comes under a related heading.
+            NOTE: The <section> element can contain <article> elements and vice versa, if you think the content warrants it. -->
+            <section>
+
+                <!-- This is the section's header. It contains the heading and navigation links for within the section -->
+                <header>
+                    <nav role="navigation">
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <article id="introduction">
+
+                    <div id="vis"></div>
+
+                    <script type="text/javascript">
+                      var spec = "data/chart.json";
+                      vegaEmbed('#vis', spec).then(function(result) {
+                      }).catch(console.error);
+                    </script>
+                </article>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+    <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
+    <footer role="contentinfo">
+
+        <!-- The <address> element contains contact information for the nearest <article> or <body> element. This example is for the <body> -->
+        <address>
+            <p>For further information, please contact <a href="mailto:admin@example.com">Tim Hopper</a>.</p>
+        </address>
+
+        <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2018' is a date -->
+        <small>Copyright &copy; <time>2018</time></small>
+
+    </footer>
+
+</body>
+
+</html>
